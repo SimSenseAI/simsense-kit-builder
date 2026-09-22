@@ -1,0 +1,15 @@
+{
+  "name": "simsenseai",
+  "owner": {
+    "name": "SimSense",
+    "url": "https://simsense.ai"
+  },
+  "plugins": [
+    {
+      "name": "simsense-kit-builder",
+      "description": "Build reusable SimSense community kits in your own agent, then review and publish on SimSense.",
+      "source": "./plugins/simsense-kit-builder"
+    }
+  ],
+  "description": "Build reusable SimSense kits with your own AI agent."
+}

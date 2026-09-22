@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+.prod.vars
+*.pem
+*.key
+*.log
+*.tgz
+.claude/worktrees/
+__pycache__/
+*.pyc
+output/

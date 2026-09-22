@@ -1,0 +1,19 @@
+{
+  "name": "simsense-kit-builder",
+  "version": "0.4.1",
+  "description": "Build reusable SimSense community kits in your own agent, then review and publish on SimSense.",
+  "author": {
+    "name": "SimSense",
+    "url": "https://simsense.ai"
+  },
+  "homepage": "https://my.simsense.ai/developer/docs/kit-authoring",
+  "repository": "https://github.com/SimSenseAI/simsense-kit-builder",
+  "keywords": [
+    "simsense",
+    "kits",
+    "mcp",
+    "skills",
+    "devices",
+    "community"
+  ]
+}

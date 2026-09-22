@@ -1,0 +1,20 @@
+{
+  "name": "simsenseai",
+  "interface": {
+    "displayName": "Simsenseai"
+  },
+  "plugins": [
+    {
+      "name": "simsense-kit-builder",
+      "source": {
+        "source": "local",
+        "path": "./plugins/simsense-kit-builder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "simsense-kit-builder",
+  "version": "0.4.1",
+  "private": true,
+  "description": "Build reusable SimSense community kits in your own agent, then review and publish on SimSense.",
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "skills",
+    ".mcp.json",
+    ".claude-plugin",
+    ".codex-plugin",
+    "README.md",
+    "verification.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}
