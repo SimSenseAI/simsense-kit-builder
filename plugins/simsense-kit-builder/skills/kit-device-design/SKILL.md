@@ -76,7 +76,7 @@ A sensor role needs no category:
 }
 ```
 
-Steward checks the owner's actual declarations during setup. Available devices
+The user's personal agent checks the owner's actual declarations during setup. Available devices
 are candidates for inspection, not proven matches. A suitable declared contract
 without fresh usable readings is supported but unverified. Ask for missing
 contract information before writing exact predicates or command calls.

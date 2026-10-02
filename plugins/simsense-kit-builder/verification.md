@@ -53,12 +53,18 @@ and clean up resources created for the test.
 
 1. Install the plugin, discover its eight skills and complete SimSense OAuth.
    Reconnect and confirm that current tools and source reads are still available.
-2. After upgrading, reconnect MCP to refresh the authoring guide schema. New
-   manifests use documentVersion 2: device roles need purpose, never capability
+2. After upgrading, reconnect MCP to refresh tool definitions. Confirm
+   `get_sim_authoring_guide` supplies the SDK reference and
+   `get_kit_authoring_guide` supplies the current manifest schema; use its supported
+   document version. For version 2 and later: device roles need purpose, never capability
    categories, and displaySim must name a declared Sim. Existing version 1 kits
    remain readable. Ask for a welcome kit. Confirm the agent reads the live guide, saves and
    validates source, inspects the sample and returns its exact web review link.
    The builder must not install or publish the kit automatically.
+   For a private-submission request, confirm that the source declares namespace
+   permissions and does not put the private content in events or media storage.
+   For a requested private trial, confirm that the personal agent reads setup
+   guidance by installId and obtains approval before installing resources.
 3. Change the kit, exercise an uncertain save and a conflicting edit, and confirm
    that retry/reconciliation preserves the person's intervening work.
 4. Remix an exact community release. Keep attribution and inherited notices.

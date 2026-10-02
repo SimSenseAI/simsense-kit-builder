@@ -1,6 +1,6 @@
 {
   "name": "simsense-kit-builder",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": true,
   "description": "Build reusable SimSense community kits in your own agent, then review and publish on SimSense.",
   "keywords": [
