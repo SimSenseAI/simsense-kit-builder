@@ -3,7 +3,9 @@
 Build a reusable kit in your own agent, then review its saved Sims, skills and
 configuration on SimSense. The plugin supplies guidance and a remote MCP
 connection; it does not host a model or replace your agent's editor and tools.
-Final publishing stays on the web with the kit owner.
+Final publishing stays on the web with the kit owner. Setup happens in the
+installer's own MCP-connected agent, which reads the kit's skills dynamically;
+this authoring plugin is optional for installers.
 
 Describe devices by what the kit needs them to do, such as counting arrivals or
 measuring room temperature. Kit Builder writes portable roles; setup checks the

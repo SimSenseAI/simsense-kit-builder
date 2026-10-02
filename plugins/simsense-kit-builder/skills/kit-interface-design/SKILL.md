@@ -14,7 +14,12 @@ description: |
 
 ## CRITICAL: Use the current platform contract
 
-Call `get_kit_authoring_guide` with `topic: "preview"` before implementation. For changes to installed SDK APIs, consult the current SimSense developer documentation. Preserve the distinction between a sample and live connected behavior.
+Read `get_sim_authoring_guide` for the current installed browser SDK, and
+`get_kit_authoring_guide` with `topic: "preview"` for sample-preview restrictions.
+If the SDK guide is missing, refresh the MCP connection once; use the current
+SimSense developer documentation if it remains unavailable. Do not infer SDK
+methods from another tool's parameter description. Keep sample and live behavior
+distinct.
 
 Start from the person's goal and the intended screen: a wall display, a phone,
 a tablet or a desktop. Choose an appropriate hierarchy, readable typography,
@@ -40,24 +45,27 @@ input if a save fails. Do not show a successful submission before its write succ
 
 ## 2. Config and state
 
-The platform supplies window.SimSense in installed Sims. Common methods:
+The platform supplies `window.SimSense` in installed Sims. Use the live SDK guide
+for method signatures, result shapes, units and limits. Match configuration keys
+to manifest inputs and render a useful state while settings load. State belongs
+to one Sim; matching namespace names alone do not share data between Sims.
 
-- await SimSense.getConfig() reads installation settings. Render defaults before
-  settings arrive, and use matching manifest input keys.
-- await SimSense.getAll(namespace) returns a key/value object for this Sim.
-- SimSense.subscribe(namespace, callback) observes this Sim's state updates.
-  Its callback receives key and value; reread the namespace when rendering a
-  combined view.
-- await SimSense.set(namespace, key, value) persists a value in this Sim.
-- await SimSense.increment(namespace, key, amount) returns {value}, not a number.
-- await SimSense.emit(type, data) records a Sim event. An agent responds only if
-  a matching trigger exists and that viewer is permitted to cause it.
+Decide who may read and write each kind of data before building its interactions.
+Ordinary state, events and media storage are visible to admitted viewers. For
+private submissions, declare the namespace permissions in kit source before first
+use; read the authoring guide's `source` topic for the manifest schema. Sim
+visibility and namespace permissions are separate controls. A private namespace
+does not make an event or uploaded file private.
 
-These methods operate on the current Sim. A second Sim does not read the first
-one merely by using the same namespace. Describe and implement the actual data
-path, with [agent design](../kit-agent-design/SKILL.md) when an agent must connect
-the experiences and [automation design](../kit-automation-design/SKILL.md) when a
-screen event should wake it.
+Use the SDK's append operation for permitted submissions, reusing the same
+idempotency key and payload after an uncertain response. Owner-only dashboards
+must use authorized reads; cross-Sim reads also require an explicit reader grant
+and an authenticated owner session. Private state is not broadcast: poll it rather
+than expecting subscriptions or conditions to reveal it.
+
+Use [agent design](../kit-agent-design/SKILL.md) when an agent connects experiences,
+and [automation design](../kit-automation-design/SKILL.md) for events that wake it.
+Keep binary media in supported storage and store references in state.
 
 Never use browser storage as a substitute for shared, durable kit data. Never
 embed credentials or account-specific IDs. Use textContent for untrusted text

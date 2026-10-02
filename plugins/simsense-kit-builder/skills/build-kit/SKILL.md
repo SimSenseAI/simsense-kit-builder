@@ -81,7 +81,11 @@ data paths. Give brief updates about visible behavior and consequential decision
 Validate the exact saved revision; repair errors through another conditional edit.
 Preview each declared Sim. Distinguish source checks, rendered sample inspection
 and actual installed behavior. If browser tools are unavailable, say that the
-render still needs visual review. Prepare a private trial only when requested.
+render still needs visual review. Prepare a private trial only when requested:
+call `trial_kit_revision`, then read `get_kit_setup_guide` with its returned
+`installId`. Continue setup in the user's own agent, using `update_kit_setup` and
+`check_kit_install`; invoke `install_kit` only after approval of its effects.
+The web review link remains the owner's final publication step.
 
 Call `get_kit_review_link` with the saved `draftId` and `revisionId`. If
 `currentRevision` has changed, read and reconcile the newer source before claiming
